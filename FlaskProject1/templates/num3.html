@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Problema 3{% endblock %}
+{% block header %}#3 Leer un numero entero y mostrar todos los divisores exactos del numero comprendidos entre 1 y el numero leido.{% endblock %}
+
+{% block content %}
+
+<label for="numero">Escriba un numero:</label>
+  <input type="number" id="numero">
+  <button onclick="mostrarDivisores()">Mostrar divisores</button>
+  <div id="resultado"></div>
+
+  <script>
+    function mostrarDivisores() 
+    {
+      var num1 = parseInt(document.getElementById('numero').value);
+      var resultadoDivisores = document.getElementById('resultado');
+      resultadoDivisores.innerHTML = "Estos son todos los divisores exactos entre el 1 y el " + num1 + "<br>";
+      for (var i = 1; i <= num1; i++) {
+        if (num1 % i === 0) {
+          resultadoDivisores.innerHTML += i + "<br>";
+        }
+      }
+    }
+  </script>
+
+  {% endblock %}

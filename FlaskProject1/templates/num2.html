@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Problema 2{% endblock %}
+{% block header %}#2 Leer un numero entero y mostrar todos los pares comprendidos entre 1 y el numero leido.{% endblock %}
+
+{% block content %}
+
+<h1>Numeros pares</h1>
+    <label for="numero">Escriba un numero:</label>
+    <input type="number" id="numero">
+    <button onclick="mostrarNumerosPares()">Mostrar numeros pares</button>
+    <div id="resultado"></div>
+
+    <script>
+        function mostrarNumerosPares() {
+            var num1 = parseInt(document.getElementById("numero").value);
+            var num2 = 1;
+            var numerosPares = "";
+
+            while (num2 !== num1) {
+                if (num2 % 2 === 0) {
+                    numerosPares += num2 + "<br>";
+                }
+                num2 = num2 + 1;
+            }
+
+            document.getElementById("resultado").innerHTML = "Estos son todos los numeros pares entre el 1 y el " + num1 + ":<br>" + numerosPares;
+        }
+    </script>
+
+{% endblock %}

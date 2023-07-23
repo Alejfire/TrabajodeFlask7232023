@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}Problema 5{% endblock %}
+{% block header %}#5 Leer dos numeros y mostrar todos los numeros terminados en 4 comprendidos entre ellos.{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <h1>Numeros que terminan en 4</h1>
+        <form id="numberForm">
+            <label for="num1">Escriba el primer numero:</label>
+            <input type="number" id="num1" required><br>
+            <label for="num2">Escriba el segundo numero:</label>
+            <input type="number" id="num2" required><br>
+            <button type="button" onclick="mostrarNumeros()">Mostrar numeros que terminan en 4</button>
+        </form>
+        <div id="resultado"></div>
+    </div>
+    <script>
+        function mostrarNumeros() {
+            var num1 = parseInt(document.getElementById('num1').value);
+            var num2 = parseInt(document.getElementById('num2').value);
+            var resultado = document.getElementById('resultado');
+            
+            if (isNaN(num1) || isNaN(num2)) {
+                resultado.innerHTML = 'Por favor, ingrese numeros validos.';
+                return;
+            }
+            
+            resultado.innerHTML = '<strong>Estos son los numeros que terminan en 4:</strong><br>';
+            for (var i = num1; i < num2; i++) {
+                if (i % 10 === 4) {
+                    resultado.innerHTML += i + '<br>';
+                }
+            }
+        }
+    </script>
+
+{% endblock %}

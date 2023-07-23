@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Login Page{% endblock %}
+{% block header %}Cual Programa Quiere Resolver{% endblock %}
+
+{% block content %}
+
+	<p>Which Problem do you want to solve?:</p>
+
+	<form action="/num2" method="get">
+		<button type="submit">#2 Leer un numero entero y mostrar todos los pares comprendidos entre 1 y el numero leido.</button>
+	</form>
+
+	<form action="/num3" method="get">
+		<button type="submit">#3 Leer un numero entero y mostrar todos los divisores exactos del numero comprendidos entre 1 y el numero leido.</button>
+	</form>
+
+	<form action="/num5" method="get">
+		<button type="submit">#5 Leer dos numeros y mostrar todos los numeros terminados en 4 comprendidos entre ellos.
+</button>
+	</form>
+
+{% endblock %}
